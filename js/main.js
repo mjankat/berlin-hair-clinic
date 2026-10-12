@@ -1,9 +1,8 @@
 const header = document.getElementById("header");
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
-const form = document.getElementById("contactForm");
-const formNote = document.getElementById("formNote");
 const languageSelect = document.getElementById("languageSelect");
+const form = document.getElementById("contactForm");
 const languageKey = "berlin-hair-clinic-language";
 
 const translations = {
@@ -166,6 +165,20 @@ nav?.querySelectorAll("a").forEach((link) => {
   });
 });
 
+const consultationToggle = document.querySelector(".contact-form-toggle");
+const consultationForm = document.getElementById("consultationForm");
+consultationToggle?.addEventListener("click", () => {
+  const isOpening = consultationForm.hidden;
+  consultationForm.hidden = !isOpening;
+  consultationToggle.setAttribute("aria-expanded", String(isOpening));
+  consultationToggle.innerHTML = isOpening
+    ? 'Formu kapat <span aria-hidden="true">↑</span>'
+    : 'Hemen doldur <span aria-hidden="true">→</span>';
+  if (isOpening) {
+    consultationForm.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
+
 const resultImages = [...document.querySelectorAll(".results-grid img")];
 let lightbox;
 let previouslyFocusedImage;
@@ -224,17 +237,3 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeLightbox();
 });
 
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const data = new FormData(form);
-  const language = languageSelect.value;
-  const messages = {
-    tr: (name, service, message) => `Merhaba, ben ${name}. ${service} hakkında bilgi almak istiyorum. ${message}`,
-    en: (name, service, message) => `Hello, my name is ${name}. I would like information about ${service}. ${message}`,
-    de: (name, service, message) => `Guten Tag, mein Name ist ${name}. Ich interessiere mich für ${service}. ${message}`
-  };
-  const message = data.get("message") || ({ tr: "Ön görüşme istiyorum.", en: "I would like a consultation.", de: "Ich möchte eine Beratung." })[language];
-  const text = encodeURIComponent(messages[language](data.get("name"), data.get("service"), message));
-  if (formNote) formNote.hidden = false;
-  window.open(`https://wa.me/905322044949?text=${text}`, "_blank", "noopener,noreferrer");
-});

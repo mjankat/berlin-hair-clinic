@@ -144,9 +144,12 @@ h2 {
 }
 
 .logo-mark {
+  display: block;
   width: 42px;
   height: 42px;
-  color: var(--gold);
+  flex: 0 0 42px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 .logo-text {
@@ -712,6 +715,84 @@ blockquote footer {
   padding: 24px;
 }
 
+.contact-form-panel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(228, 200, 120, 0.3);
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(201, 164, 74, 0.2), transparent 46%),
+    linear-gradient(145deg, rgba(18, 36, 60, 0.98), rgba(7, 17, 31, 0.98));
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.contact-form-intro {
+  display: grid;
+  justify-items: start;
+  padding: clamp(28px, 5vw, 54px);
+}
+
+.contact-form-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--gold-soft);
+  color: var(--gold-2);
+  font-size: 1.45rem;
+}
+
+.contact-form-intro h2 {
+  max-width: 440px;
+  margin-bottom: 12px;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+}
+
+.contact-form-intro > p:not(.eyebrow) {
+  max-width: 460px;
+  margin: 0 0 26px;
+  color: var(--muted);
+}
+
+.contact-form-toggle {
+  min-height: 50px;
+  padding-inline: 25px;
+}
+
+.contact-form-toggle span {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.contact-form-toggle:hover span {
+  transform: translateX(3px);
+}
+
+.contact-form-embed[hidden] {
+  display: none;
+}
+
+.contact-form-embed {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 16px 16px;
+}
+
+.contact-form-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: 588px;
+  min-width: 0;
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+}
+
 .contact-form label {
   display: grid;
   gap: 6px;
@@ -767,8 +848,36 @@ blockquote footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.3fr repeat(3, 1fr);
   gap: 32px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin: 10px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: var(--gold-2);
+  transform: translateX(3px);
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+.footer-social .instagram-dot {
+  fill: currentColor;
+  stroke: none;
 }
 
 .footer-brand {
