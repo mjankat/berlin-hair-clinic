@@ -145,9 +145,9 @@ h2 {
 
 .logo-mark {
   display: block;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
   object-fit: contain;
   border-radius: 50%;
 }

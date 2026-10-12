@@ -88,9 +88,204 @@ const translations = {
 }
 };
 
+Object.assign(translations.en, {
+  "Ki\u00c5\u0178iye \u00c3\u00b6zel planlama hatt\u00c4\u00b1": "Personalized planning support",
+  "Estetik bir sonu\u00c3\u00a7 i\u00c3\u00a7in planlama ve konfor bir arada": "Planning and comfort for a natural-looking result",
+  "\u00c3\u0153cretsiz": "Free",
+  "\u00c3\u2013n g\u00c3\u00b6r\u00c3\u00bc\u00c5\u0178me \u00e2\u20ac\u201d planl\u00c4\u00b1 ve \u00c5\u0178effaf s\u00c3\u00bcre\u00c3\u00a7": "Free consultation - a clear, planned process",
+  "\u00c4\u00b0lk ad\u00c4\u00b1m\u00c4\u00b1n\u00c4\u00b1z\u00c4\u00b1 bug\u00c3\u00bcn at\u00c4\u00b1n": "Take the first step today",
+  "Formu doldurun, sizi arayal\u00c4\u00b1m": "Fill out the form and we will call you",
+  "Size en uygun plan\u00c4\u00b1 birlikte olu\u00c5\u0178tural\u00c4\u00b1m. Bilgilerinizi b\u00c4\u00b1rak\u00c4\u00b1n,": "Let’s create the right plan for you. Leave your details,",
+  "dan\u00c4\u00b1\u00c5\u0178man\u00c4\u00b1m\u00c4\u00b1z k\u00c4\u00b1sa s\u00c3\u00bcre i\u00c3\u00a7inde sizinle ileti\u00c5\u0178ime ge\u00c3\u00a7sin.": "and our consultant will contact you shortly.",
+  "Hemen doldur": "Fill it out now",
+  "Sosyal medya hesaplar\u00c4\u00b1m\u00c4\u00b1z": "Our social media accounts"
+});
+Object.assign(translations.de, {
+  "Ki\u00c5\u0178iye \u00c3\u00b6zel planlama hatt\u00c4\u00b1": "Persönliche Beratung und Planung",
+  "Estetik bir sonu\u00c3\u00a7 i\u00c3\u00a7in planlama ve konfor bir arada": "Planung und Komfort für ein natürliches Ergebnis",
+  "\u00c3\u0153cretsiz": "Kostenlos",
+  "\u00c3\u2013n g\u00c3\u00b6r\u00c3\u00bc\u00c5\u0178me \u00e2\u20ac\u201d planl\u00c4\u00b1 ve \u00c5\u0178effaf s\u00c3\u00bcre\u00c3\u00a7": "Kostenlose Beratung - klar und gut geplant",
+  "\u00c4\u00b0lk ad\u00c4\u00b1m\u00c4\u00b1n\u00c4\u00b1z\u00c4\u00b1 bug\u00c3\u00bcn at\u00c4\u00b1n": "Machen Sie heute den ersten Schritt",
+  "Formu doldurun, sizi arayal\u00c4\u00b1m": "F\u00fcllen Sie das Formular aus – wir rufen Sie an",
+  "Size en uygun plan\u00c4\u00b1 birlikte olu\u00c5\u0178tural\u00c4\u00b1m. Bilgilerinizi b\u00c4\u00b1rak\u00c4\u00b1n,": "Gemeinsam finden wir den passenden Plan. Hinterlassen Sie Ihre Angaben,",
+  "dan\u00c4\u00b1\u00c5\u0178man\u00c4\u00b1m\u00c4\u00b1z k\u00c4\u00b1sa s\u00c3\u00bcre i\u00c3\u00a7inde sizinle ileti\u00c5\u0178ime ge\u00c3\u00a7sin.": "und unser Beratungsteam meldet sich in Kürze bei Ihnen.",
+  "Hemen doldur": "Jetzt ausfüllen",
+  "Sosyal medya hesaplar\u00c4\u00b1m\u00c4\u00b1z": "Unsere Social-Media-Kanäle"
+});
+function updateConsultationToggle(language, expanded) {
+  const toggle = document.querySelector(".contact-form-toggle");
+  if (!toggle) return;
+  const labels = {
+    tr: expanded ? "Formu kapat" : "Hemen doldur",
+    en: expanded ? "Close form" : "Fill it out now",
+    de: expanded ? "Formular schließen" : "Jetzt ausfüllen"
+  };
+  toggle.innerHTML = `${labels[language]} <span aria-hidden="true">${expanded ? "↑" : "→"}</span>`;
+}
+
+function applyContactFooterLanguage(language) {
+  const localizedText = {
+    en: [
+      "Personalized planning", "Free consultation appointment", "Send us your photos for a personalized graft estimate and travel plan.",
+      "Phone / WhatsApp", "Email", "Availability", "International patient support, 24/7", "Take the first step today",
+      "Fill out the form and we will call you", "Let us create the right plan for you. Leave your details and our consultant will contact you shortly.",
+      "Part of Muş Hair", "Hair · Beard · Eyebrow design · Scalp micropigmentation · Aesthetics.", "Quick links", "Services", "Process",
+      "Medical travel", "FAQ", "Contact", "A trusted team focused on experience and results.", "Our social media accounts"
+    ],
+    de: [
+      "Individuelle Planung", "Kostenloses Beratungsgespräch", "Senden Sie uns Ihre Fotos für eine individuelle Graftschätzung und Reiseplanung.",
+      "Telefon / WhatsApp", "E-Mail", "Erreichbarkeit", "Internationaler Patientenservice rund um die Uhr", "Machen Sie heute den ersten Schritt",
+      "Füllen Sie das Formular aus – wir rufen Sie an", "Gemeinsam finden wir den passenden Plan. Hinterlassen Sie Ihre Angaben und unser Beratungsteam meldet sich in Kürze bei Ihnen.",
+      "Teil von Muş Hair", "Haar · Bart · Augenbrauen · Kopfhaut-Mikropigmentierung · Ästhetik.", "Direktlinks", "Leistungen", "Ablauf",
+      "Medizinische Reisen", "Häufige Fragen", "Kontakt", "Ein erfahrenes Team mit Blick auf natürliche Ergebnisse.", "Unsere Social-Media-Kanäle"
+    ]
+  };
+  const targets = [
+    ".contact-copy .eyebrow", ".contact-copy h2", ".contact-copy > p:not(.eyebrow)", ".contact-meta li:nth-child(1) span",
+    ".contact-meta li:nth-child(2) span", ".contact-meta li:nth-child(3) span", ".contact-meta li:nth-child(3) strong",
+    ".contact-form-intro .eyebrow", ".contact-form-intro h2", ".contact-form-intro > p:not(.eyebrow)", ".footer-brand small",
+    ".footer-grid > div:first-child > p:not(.footer-brand)", ".footer-grid > div:nth-child(2) h3", '.footer-grid a[href="#hizmetler"]',
+    '.footer-grid a[href="#surec"]', '.footer-grid a[href="#turizm"]', '.footer-grid a[href="#sss"]',
+    ".footer-grid > div:nth-child(3) h3", ".footer-grid > div:nth-child(3) p", ".footer-social h3"
+  ];
+  targets.forEach((selector, index) => {
+    const element = document.querySelector(selector);
+    if (!element) return;
+    if (!element.dataset.turkishText) element.dataset.turkishText = element.textContent.trim();
+    element.textContent = language === "tr" ? element.dataset.turkishText : localizedText[language][index];
+  });
+
+  if (language === "tr" && document.documentElement.lang !== "tr") return;
+  const iframe = document.querySelector("#consultationForm iframe");
+  if (iframe) {
+    const formUrl = new URL(iframe.src);
+    formUrl.searchParams.set("hl", language);
+    iframe.src = formUrl.href;
+    iframe.title = language === "de" ? "Kostenloses Beratungsformular" : language === "en" ? "Free consultation form" : "Ücretsiz ön görüşme formu";
+  }
+}
+
+function applyFaqLanguage(language) {
+  const answers = {
+    en: [
+      "Grafts taken from the donor area are genetically resistant to hair loss. With proper planning and care, results are long-lasting; the final appearance usually settles by month 12.",
+      "With FUE, channels are opened before grafts are placed. DHI places grafts directly with an implanter pen and can allow closer placement and controlled angles. We determine the suitable technique during your consultation.",
+      "The procedure is performed under local anaesthesia. Most patients return to their hotel the same day. It usually takes around 6–8 hours, depending on the number of grafts.",
+      "A stay of 3 nights / 4 days is usually enough for the consultation, procedure, first wash and check-up. We will confirm flight timing with your coordinator.",
+      "Yes. Transplanted hairs may shed temporarily during the first weeks. New growth often starts around month 3 and becomes more noticeable between months 6 and 12."
+    ],
+    de: [
+      "Grafts aus dem Spenderbereich sind genetisch resistent gegen Haarausfall. Bei guter Planung und Pflege hält das Ergebnis lange an; das endgültige Erscheinungsbild entwickelt sich meist bis zum 12. Monat.",
+      "Bei FUE werden vor dem Einsetzen der Grafts Kanäle geöffnet. Bei DHI werden die Grafts direkt mit einem Implanter eingesetzt; dadurch sind eine dichtere Platzierung und kontrollierte Winkel möglich. Welche Technik passt, klären wir im Beratungsgespräch.",
+      "Der Eingriff erfolgt unter örtlicher Betäubung. Die meisten Patienten kehren noch am selben Tag ins Hotel zurück. Je nach Graftzahl dauert er etwa 6–8 Stunden.",
+      "In der Regel reichen 3 Nächte / 4 Tage für Beratung, Eingriff, erste Haarwäsche und Kontrolle. Die Flugplanung stimmen wir mit Ihrem Ansprechpartner ab.",
+      "Ja. In den ersten Wochen können transplantierte Haare vorübergehend ausfallen. Neues Wachstum beginnt häufig ab dem 3. Monat und wird zwischen dem 6. und 12. Monat deutlicher."
+    ]
+  };
+  document.querySelectorAll(".faq-list details p").forEach((answer, index) => {
+    if (!answer.dataset.turkishText) answer.dataset.turkishText = answer.textContent.trim();
+    answer.textContent = language === "tr" ? answer.dataset.turkishText : answers[language][index];
+  });
+}
+
+function applyTestimonialsLanguage(language) {
+  const translationsByLanguage = {
+    en: [
+      "Patient experiences", "A well-planned, comfortable journey",
+      "I travelled from Berlin. Everything from airport pickup to the hotel and clinic was planned in advance. My hairline looks natural; no one can tell.",
+      "Markus K. · 38 · Germany",
+      "I considered a beard transplant. The free consultation gave me a realistic graft estimate. There was no exaggeration, and the process was transparent.",
+      "Emre A. · 29 · Istanbul",
+      "I had eyebrow micropigmentation. It looks natural without makeup. My consultant followed up with photos at every stage.",
+      "Leyla S. · 34 · Netherlands"
+    ],
+    de: [
+      "Patientenerfahrungen", "Ein gut geplanter und angenehmer Ablauf",
+      "Ich bin aus Berlin angereist. Von der Abholung am Flughafen bis zum Hotel und zur Klinik war alles im Voraus geplant. Meine Haarlinie wirkt natürlich; niemand bemerkt etwas.",
+      "Markus K. · 38 · Deutschland",
+      "Ich habe über eine Barttransplantation nachgedacht. In der kostenlosen Beratung erhielt ich eine realistische Graftschätzung. Es wurde nichts übertrieben, und der Ablauf war transparent.",
+      "Emre A. · 29 · Istanbul",
+      "Ich habe eine Augenbrauen-Mikropigmentierung machen lassen. Sie wirkt auch ohne Make-up natürlich. Meine Beraterin hat mich in jeder Phase mit Fotos begleitet.",
+      "Leyla S. · 34 · Niederlande"
+    ]
+  };
+  const elements = [
+    document.querySelector(".quotes .section-head .eyebrow"),
+    document.querySelector(".quotes .section-head h2"),
+    ...[...document.querySelectorAll(".quote-grid blockquote")].flatMap((quote) => [quote.querySelector("p"), quote.querySelector("footer")])
+  ];
+  elements.forEach((element, index) => {
+    if (!element) return;
+    if (!element.dataset.turkishText) element.dataset.turkishText = element.textContent.trim();
+    element.textContent = language === "tr" ? element.dataset.turkishText : translationsByLanguage[language][index];
+  });
+}
+
+function applyComfortLanguage(language) {
+  const translationsByLanguage = {
+    en: [
+      "Patient comfort",
+      "Your comfort comes first. We provide a quiet rest area, arrangements for companions and support at every step on the day of your procedure.",
+      "International standards",
+      "We provide safe care with sterilization, single-use materials and a documented patient record.",
+      "Transparent communication",
+      "Graft estimate, technique and price are agreed in advance. There are no surprise charges on the day of your procedure."
+    ],
+    de: [
+      "Patientenkomfort",
+      "Ihr Wohlbefinden steht an erster Stelle. Wir bieten einen ruhigen Ruhebereich, organisieren die Betreuung von Begleitpersonen und unterstützen Sie am Behandlungstag bei jedem Schritt.",
+      "Internationale Standards",
+      "Sterilisation, Einwegmaterialien und eine dokumentierte Patientenakte unterstützen eine sichere Behandlung.",
+      "Transparente Kommunikation",
+      "Graftschätzung, Technik und Preis werden vorab abgestimmt. Am Behandlungstag gibt es keine unerwarteten Zusatzkosten."
+    ]
+  };
+  const elements = [...document.querySelectorAll(".comfort-card")].flatMap((card) => [card.querySelector("h3"), card.querySelector("p")]);
+  elements.forEach((element, index) => {
+    if (!element) return;
+    if (!element.dataset.turkishText) element.dataset.turkishText = element.textContent.trim();
+    element.textContent = language === "tr" ? element.dataset.turkishText : translationsByLanguage[language][index];
+  });
+}
+
+function applyTrustBarLanguage(language) {
+  const translationsByLanguage = {
+    en: [
+      "FUE & DHI", "Natural-looking, lasting results", "MST", "International hair restoration services",
+      "7/24", "Personalized planning support", "Free", "Free consultation - a clear, planned process"
+    ],
+    de: [
+      "FUE & DHI", "Natürlich wirkende, langanhaltende Ergebnisse", "MST", "Internationale Haartransplantation",
+      "7/24", "Persönliche Beratung und Planung", "Kostenlos", "Kostenlose Beratung - klar und gut geplant"
+    ]
+  };
+  const elements = [...document.querySelectorAll(".trust-grid > div")].flatMap((item) => [item.querySelector("strong"), item.querySelector("span")]);
+  elements.forEach((element, index) => {
+    if (!element) return;
+    if (!element.dataset.turkishText) element.dataset.turkishText = element.textContent.trim();
+    element.textContent = language === "tr" ? element.dataset.turkishText : translationsByLanguage[language][index];
+  });
+}
+
+function applyWholeElementTranslations(language) {
+  const elements = [...document.querySelectorAll("h2, h3, p, li, summary, figcaption, small, strong")]
+    .filter((element) => !element.querySelector("h2, h3, p, ul, ol, span, em, strong, svg"));
+  elements.forEach((element) => {
+    if (!element.dataset.originalCopy) element.dataset.originalCopy = element.textContent.trim().replace(/\s+/g, " ");
+    const original = element.dataset.originalCopy;
+    element.textContent = language === "tr" ? original : (translations[language][original] || original);
+  });
+}
+
 // Replace matching text nodes only, so form controls and SVG markup remain intact.
 function translateText(language) {
   const dictionary = translations[language];
+  applyContactFooterLanguage("tr");
+  applyFaqLanguage("tr");
+  applyTestimonialsLanguage("tr");
+  applyComfortLanguage("tr");
+  applyTrustBarLanguage("tr");
+  applyWholeElementTranslations("tr");
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
     const node = walker.currentNode;
@@ -99,8 +294,16 @@ function translateText(language) {
     if (source) node.nodeValue = node.nodeValue.replace(node.nodeValue.trim(), translated);
   }
 
+  applyWholeElementTranslations(language);
+  applyContactFooterLanguage(language);
+  applyFaqLanguage(language);
+  applyTestimonialsLanguage(language);
+  applyComfortLanguage(language);
+  applyTrustBarLanguage(language);
+
   document.documentElement.lang = language;
   languageSelect.value = language;
+  updateConsultationToggle(language, document.querySelector(".contact-form-toggle")?.getAttribute("aria-expanded") === "true");
   document.querySelector('nav[aria-label]')?.setAttribute("aria-label", language === "de" ? "Hauptnavigation" : "Main navigation");
   document.getElementById("menuBtn")?.setAttribute("aria-label", language === "de" ? "Menü öffnen" : language === "en" ? "Open menu" : "Menüyü aç");
   document.title = language === "de"
@@ -171,9 +374,7 @@ consultationToggle?.addEventListener("click", () => {
   const isOpening = consultationForm.hidden;
   consultationForm.hidden = !isOpening;
   consultationToggle.setAttribute("aria-expanded", String(isOpening));
-  consultationToggle.innerHTML = isOpening
-    ? 'Formu kapat <span aria-hidden="true">↑</span>'
-    : 'Hemen doldur <span aria-hidden="true">→</span>';
+  updateConsultationToggle(document.documentElement.lang, isOpening);
   if (isOpening) {
     consultationForm.scrollIntoView({ behavior: "smooth", block: "start" });
   }
