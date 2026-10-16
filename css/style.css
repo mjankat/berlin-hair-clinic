@@ -365,9 +365,16 @@ section[id] {
   position: relative;
 }
 
-.about-visual img {
+.about-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
   height: 480px;
+}
+
+.about-visual img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 24px;
   border: 1px solid var(--line);
@@ -628,7 +635,7 @@ section[id] {
     min-height: 620px;
   }
 
-  .about-visual img {
+  .about-photos {
     height: 540px;
   }
 
