@@ -14,6 +14,7 @@ const translations = {
     "Güvenin, deneyimin ve sonuçların adresi": "A trusted team focused on experience and results", "Muş Hair · Berlin Hair Clinic MST": "Muş Hair · Berlin Hair Clinic MST",
     "Doğal ve kalıcı sonuç odaklı ekim": "Restoration focused on natural-looking results", "Uluslararası saç ekimi hizmetleri": "International hair restoration", "Kişiye özel danışmanlık hattı": "Personalized patient support", "Ön görüşme — planlı ve şeffaf süreç": "Free consultation with a clear plan",
     "Klinik yaklaşım": "Our clinical approach", "Doğal saç çizgisi, kalıcı sonuç": "A natural hairline, lasting results", "Neden Berlin Hair Clinic MST?": "Why Berlin Hair Clinic MST?",
+    "Estetik bir sonuç için planlama ve konfor bir arada": "Planning and comfort for a natural-looking result",
     "Estetik bir sonuç için tıp, planlama ve konfor bir arada": "Medical care, planning and comfort for a natural-looking result",
     "Saç ekimi bir “işlem” değil; yüz oranlarınıza, donör bölgenize ve yaşam tarzınıza göre kurgulanan bir yolculuktur. MST ekibi, greft dağılımını, saç çizgisini ve yoğunluğu doğal duracak şekilde planlar.": "Hair restoration is a journey planned around your facial proportions, donor area and lifestyle. Our team plans graft placement, hairline and density for a natural appearance.",
     "Muş Hair bünyesinde yürüttüğümüz uluslararası hasta programı; transfer, konaklama, tercüme ve ameliyat sonrası takibi tek bir danışmanlık hattında toplar.": "Our international patient program brings transfers, accommodation, interpretation and aftercare together through one point of contact.",
@@ -89,6 +90,12 @@ const translations = {
 };
 
 Object.assign(translations.en, {
+  "MST yaklaşımı": "The MST approach",
+  "MST – Medikal Spesial Teknik | Saç Ekimi": "MST – Medikal Spesial Teknik | Hair Transplantation",
+  "MST (Medikal Spesial Teknik), ekibimiz tarafından geliştirilen saç ekimi yaklaşımının adıdır.": "MST (Medikal Spesial Teknik) is the name of the hair transplantation approach developed by our team.",
+  "MST kapsamında saç ekimi sürecinin planlanması, saç çizgisinin değerlendirilmesi ve kişiye özel uygulama yaklaşımı ön planda tutulur. Uygulama detayları, kişinin saç yapısı ve klinik değerlendirmesine göre belirlenir.": "The MST approach focuses on planning the hair transplantation process, assessing the hairline and tailoring the procedure to each person. Treatment details are determined by the person’s hair characteristics and clinical assessment.",
+  "MST hakkında bilgi almak ve saç ekimi seçeneklerini değerlendirmek için Berlin Hair Clinic ile iletişime geçebilirsiniz.": "Contact Berlin Hair Clinic to learn more about MST and discuss your hair transplantation options.",
+  "İletişime geçin": "Get in touch",
   "Ki\u00c5\u0178iye \u00c3\u00b6zel planlama hatt\u00c4\u00b1": "Personalized planning support",
   "Estetik bir sonu\u00c3\u00a7 i\u00c3\u00a7in planlama ve konfor bir arada": "Planning and comfort for a natural-looking result",
   "\u00c3\u0153cretsiz": "Free",
@@ -101,6 +108,12 @@ Object.assign(translations.en, {
   "Sosyal medya hesaplar\u00c4\u00b1m\u00c4\u00b1z": "Our social media accounts"
 });
 Object.assign(translations.de, {
+  "MST yaklaşımı": "Der MST-Ansatz",
+  "MST – Medikal Spesial Teknik | Saç Ekimi": "MST – Medikal Spesial Teknik | Haartransplantation",
+  "MST (Medikal Spesial Teknik), ekibimiz tarafından geliştirilen saç ekimi yaklaşımının adıdır.": "MST (Medikal Spesial Teknik) bezeichnet den von unserem Team entwickelten Ansatz zur Haartransplantation.",
+  "MST kapsamında saç ekimi sürecinin planlanması, saç çizgisinin değerlendirilmesi ve kişiye özel uygulama yaklaşımı ön planda tutulur. Uygulama detayları, kişinin saç yapısı ve klinik değerlendirmesine göre belirlenir.": "Beim MST-Ansatz stehen die Planung der Haartransplantation, die Beurteilung der Haarlinie und eine individuelle Behandlung im Mittelpunkt. Die Details richten sich nach der Haarstruktur und der klinischen Beurteilung.",
+  "MST hakkında bilgi almak ve saç ekimi seçeneklerini değerlendirmek için Berlin Hair Clinic ile iletişime geçebilirsiniz.": "Wenn Sie mehr über MST erfahren und Ihre Möglichkeiten zur Haartransplantation besprechen möchten, kontaktieren Sie Berlin Hair Clinic.",
+  "İletişime geçin": "Kontakt aufnehmen",
   "Ki\u00c5\u0178iye \u00c3\u00b6zel planlama hatt\u00c4\u00b1": "Persönliche Beratung und Planung",
   "Estetik bir sonu\u00c3\u00a7 i\u00c3\u00a7in planlama ve konfor bir arada": "Planung und Komfort für ein natürliches Ergebnis",
   "\u00c3\u0153cretsiz": "Kostenlos",
